@@ -1,0 +1,75 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+.Login_Page{
+    background-image: url(/images/BlackBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+
+}
+.Login_Page .Login{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 350px;
+    display: inline-block;
+    width: 100%;
+    padding:15px;
+    
+    
+}
+
+.logo{
+
+    text-align: center;
+}
+
+input{
+    width: 90%;
+    height: 35px;
+    margin:0px 10px 0px 10px;
+    padding-left: 15px;
+    border: 1.5px solid rgb(235, 235, 235);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+button{
+    color: rgb(255, 255, 255);
+    background-color: #00294D;
+    width: 96%;
+    height: 35px;
+    margin:10px;
+    padding:2px;
+    border-bottom-color: black;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+label{
+    padding: 5px 0;;
+    margin:0px 10px;
+    display:block;
+}
+
+p{
+    
+    text-align: center;
+    color: blue;
+    font-size: small;
+    
+
+}

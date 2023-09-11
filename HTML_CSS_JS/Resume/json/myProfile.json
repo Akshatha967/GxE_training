@@ -1,0 +1,41 @@
+{
+  "personal_info": {
+    "name": "Akshatha",
+    "title": "Software Engineer",
+    "caption": "Developing and maintaining computer software",
+    "email": "ashetty@galaxe.com",
+    "phone": "9988776655",
+    "address": "Udupi, Karnataka",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "Exp": 2
+  },
+ "Career Objective": "To obtain a technology-focused role to creatively tackle real-life challenges using my passion for innovation and staying updated with the latest technology trends. Eager to approach tasks with an open and curious mindset while actively seeking opportunities for growth and learning",
+  "educational_qualifications": [
+    {
+      "degree": "SSLC",
+      "year_of_passing": "2017",
+      "grade": "96%",
+      "institute": "T.A.Pai EMHS, Udupi"
+    },
+    {
+      "degree": "PUC",
+      "year_of_passing": "2019",
+      "grade": "92%",
+      "institute": "PPC, Udupi"
+    },
+    {
+      "degree": "B.E",
+      "year_of_passing": "2023",
+      "grade": "9.4 CGPA",
+      "institute": "SCEM, mangalore"
+    }
+ 
+  ],
+  
+  "professional_skills": {
+    "Positive Behaviors": "90%",
+    "Teamworking Abilities": "85%",
+    "Time Management": "65%",
+    "Excellent Communication": "45%"
+  }
+}

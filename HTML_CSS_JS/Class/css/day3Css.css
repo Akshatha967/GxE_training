@@ -1,0 +1,30 @@
+article {
+background-color: rgb(223, 255, 255);
+/*background-image:url(/images/Backgnd.jpg)*/
+margin-left: 220px;
+
+    
+}
+
+aside{
+    width:12em;
+    float:left;  
+    background-color:rgb(227, 200, 219);
+     
+}
+.pclass{
+    font-style: italic;
+    font-size: 12;
+}
+
+#pid{
+    font-style: normal;
+    font-size: 10;
+}
+
+*{
+    color: rgb(3, 19, 20);
+    
+}
+
+

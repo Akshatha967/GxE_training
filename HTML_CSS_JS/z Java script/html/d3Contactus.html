@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+        <div class="mt-2 justify-content-right">
+            <button onclick="return closeWindow()" class="float-rightbtn btn-primary btn-sm">Time_out</button>
+        </div>
+        <p id="prof"></p>
+
+        <div class="mt-2 justify-content-right prof">
+            <button onclick="return setInterval()" type="submit" class="float-rightbtn btn-primary btn-sm">interval</button>
+        </div>
+
+    <div class="container w-50">
+        <h1>Contact us</h1>
+
+        
+
+        <form action="#" method="get">
+            <div class="row">
+                <div class="col-md-3">
+                <label>Name</label>
+                </div>
+
+                <div class="col-md-9">
+                <input type="text" class="form-control" id="name" placeholder="enter name"/>
+                <label id="name_error"></label>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                <label>Email</label>
+                
+                </div>
+
+                <div class="col-md-9">
+                <input type="text" class="form-control" id="email" placeholder="enter email"/>
+                <label id="email_error"></label>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                <label>Phone</label>
+                </div>
+
+                <div class="col-md-9">
+                <input type="text" class="form-control" id="phone" placeholder="enter phone"/>
+                <label id="phone_error"></label>
+            </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Query</label>
+                </div>
+
+                <div class="col-md-9">
+                <select id="query" onchange="handleQuery(event)" class="form-control">
+                    <option value="select">Select</option>
+                    <option value="HR">HR</option>
+                    <option value="select">Finance</option>
+                    <option value="select">Business</option>
+                </select>
+                <label id="query_error"></label>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <button onclick="return validateForm()" type="submit" class="float-rightbtn btn-primary btn-sm">Submit</button>
+            </div>
+
+            
+
+
+        </form>
+    </div>
+    
+<script>
+    function changetheme(theme)
+{
+    var cls = document.getElementsByTagName(body);
+    cls.setAttribute("class","theme");
+}
+function handleQuery(element){
+    var query = element.target.value;
+    console.log("no select ")
+    if(query=='hr'){
+        alert('HR not available');
+    }
+}
+
+function validateForm(){
+    
+        var name=document.getElementById("name").value;
+        // alert("name is :",name);
+        var email=document.getElementById("email").value;
+        var phone=document.getElementById("phone").value;
+        var query=document.getElementById("query").value;
+        // alert("name is :",name);
+    document.getElementById('name_error').innerHTML=" ";
+    document.getElementById('email_error').innerHTML=" ";
+    document.getElementById('phone_error').innerHTML=" ";
+    document.getElementById('query_error').innerHTML=" ";
+
+    // alert("name is :",name);
+    if(name=="")
+    {
+        document.getElementById('name_error').innerHTML="please enter name";
+    }
+    if(email=="")
+    {
+        document.getElementById('email_error').innerHTML="please enter";
+    }
+    if(phone=="")
+    {
+        document.getElementById('phone_error').innerHTML="please enter  phone number";
+    }
+    if(query=="")
+    {
+        document.getElementById('query_error').innerHTML="Query!";
+    }
+    return false;
+}
+
+function closeWindow(){
+    // alert("3");
+    setTimeout(function(){
+        window.close();
+
+    },3);
+   
+}
+
+setInterval(function(){
+    var currentTime= new Date();
+    document.getElementById('prof').innerHTML=currentTime;
+},3000);
+
+     </script> 
+
+
+        <script src="../Js/eventscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

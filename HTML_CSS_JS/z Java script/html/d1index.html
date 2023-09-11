@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+
+    <ol>
+        <li>prompt, alert, console</li>
+        <li>DOM</li>
+    </ol>
+    <h1 id="demo">demo:Hello</h1>
+    <h1 id="demo1">demo1:Hello</h1>
+    <h1 class="cls">clas:1 How</h1>
+    <h2 class="cls">cls:2</h2>
+
+    <p>var let const<br>
+        scope:0 1 1<br>
+        redeclare:1 0 0<br>
+        reassign:1 1 0</p>
+
+
+    <div> Datatypes
+        <p>Primitive Datatypes</p>
+        <p>nn bb ss u 
+            <u>
+                <li>null number</li>
+                <li>boolean bigint</li>
+                <li>string symbol</li>
+                <i>undefined</i>
+            </u>
+        </p>
+
+        <p>composite datatypes</p>
+        <p>array, objects, date</p>
+    </div>
+
+    <div id="operators">
+        <p>arithmetic</p>
+            <p>+ - * ** / % ++ --</p>
+        <p>assignment</p>
+            <p>
+                <ol>
+                    <li>=</li>
+                    <li>+= -+ %= /= *=</li>
+                </ol>
+            </p>
+        <p>Comparison</p>
+            <p>==  ===  < >  <=  >=  !=  !==  ?</p>
+        <p> Logical operators: </p>
+            <p>&& (and) ||(or) !(not)</p>
+    </div>
+
+    
+
+    <script>
+        // alert('hi')
+        // document.write('<h1>hello, Good morning</h1>');
+
+        document.getElementById('demo').innerHTML="demo:good morning";
+        document.getElementsByClassName('cls')[0].innerHTML="cls:1 how are you";
+        document.getElementById('demo').style.color ='red';
+        document.getElementById('demo1').style.display="none";
+
+        // let, var and const keywords
+        const arr={
+            'var':'var a=10 , var a=25, a=30',
+            'let' :'let a=10, a=20',
+            'const':'const a=10'
+        };
+        document.write("var: ",arr["var"],"<br> let: ",arr["let"],"<br> const: ",arr["const"]);
+
+        document.write("<br><br><p>operators: assignment and arithmetic</p>");
+        let a=10,b=5;
+        document.write("a=",a," b=",b,"<br>");
+        document.write("a**b= ",a**b,"<br>");
+        document.write("a+=b is :",a+=b,"<br> a=",a,"<br>");
+        
+        a=10;
+        c="10";
+
+        document.write(" a:",a," c:",c," <br> a==c ", a==c);
+        document.write("<br> a===c ", a===b);
+
+    </script>
+
+    <div>
+        <p> Conditionals</p>
+        <p>
+            <li>if   else    else if</li>
+            <li>switch</li>
+            <li>for loops</li>
+            <li> while and do while</li>
+        </p>
+    </div>
+
+    <script>
+        let age= prompt('enter age:')
+        age = Number(parseInt(age));
+
+        let note="";
+        if(age>=18){
+            note ="gt18";
+            alert("you are eligible for vote")
+        }
+        else if(age<7)
+        {
+            note ="lt7";
+            alert("grow up a bit more!!")
+        }
+        else{
+            note ="lt18";
+            alert('you are not eligible for voting')
+        }
+
+        console.log(a>b?"a greater" :"b greater");
+
+        switch(note)
+        {
+            case "lt18": console.log("switch says u cant vote"); break;
+            case "lt7" : console.log("switch says you are child");break;
+            case "gt18": console.log("ssys: yahoo! go and vote");break;
+            default: alert("none");
+        }
+
+
+        for(let i=0; i<10;i++)
+        {
+            console.log(i);
+        }
+
+        let ar1={
+            "name":"john",
+            "age":20
+        }
+        for(let a in ar1)
+        {
+            console.log(a+" ",ar1[a]);
+        }
+
+        let i=0;
+        while(i<5){
+            i++;
+        }
+        console.log(i," in while loop frok 0-5");
+        
+        i=0;
+        do{
+            i++;
+        }while(i<0);
+        console.log(i," in do while loop frok 0-0");
+        
+    </script>
+
+    <p>Arrays</p>
+    <p>with let and const</p>
+    <p> functions</p>
+    <ol>
+        <li>array.length</li>
+        <li>push pop shift unshift</li>
+        <li> array.toString() or join("*")</li>
+    </ol>
+
+    <script>
+        let mark=[10,20,30,12,80];
+        console.log(mark);
+        mark=[20,20,30,20,70];
+        console.log(mark);
+        mark[2]=80;
+        console.log(mark);
+
+        console.log("lenght:", mark.length);
+        mark.pop()
+        mark.push(50);
+        mark.shift()
+        mark.unshift(55);
+        console.log(mark)
+
+        let marks = mark.toString();
+        console.log(typeof(marks));
+
+        let jn = mark.join("-")
+        console.log(jn,"__type is ", typeof(jn));
+    </script>
+
+</body>

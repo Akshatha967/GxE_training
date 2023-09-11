@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <style>
+        div{
+            background-color: brown;
+            height: 200px;
+        }
+        h1{
+            font-size:90px;
+        }
+        /*ipd* (min: width 400px); can also be used. "and" can be used to provide between operation. */
+        @media only screen and (max-width:700px){
+            div{
+            background-color:blue;
+            }
+            h1{
+            font-size:50px;
+            }
+
+        /*mobile*/
+        @media only screen and (max-width:600px){
+            div{
+            background-color:rgb(43, 255, 0);
+            }
+            h1{
+            font-size:10px;
+            }
+
+        }
+    </style>
+    <body>
+        <div>
+            <h1>test</h1>
+        </div>
+    </body>
+</html>
