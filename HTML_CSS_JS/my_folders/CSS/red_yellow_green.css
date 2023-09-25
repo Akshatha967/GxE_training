@@ -1,0 +1,29 @@
+
+.div_ryg
+{
+height: 100px;
+width:100px;
+}
+
+.div_rps{
+    height: 100px;
+width:100px;
+}
+
+#red
+{
+    background-color: red;
+    initial-value: 'red';
+}
+#green{
+background-color: green;
+initial-value: 'green';
+}
+#yellow{
+    background-color: yellow;
+    initial-value: 'yellow';
+}
+.for_flex 
+{
+    display: flex;
+}

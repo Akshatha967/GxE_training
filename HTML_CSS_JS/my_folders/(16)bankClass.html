@@ -1,0 +1,69 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <input id ='with' type="text">
+
+            <button id="withdraw" onclick ='withdraw()'>Withdraw</button>
+            <br>
+            <input id='dep' type="text">
+            
+            <button id="deposit" onclick ='deposit()'>Deposit</button>
+
+            <h3 id="bal">
+                balance is :
+            </h3>
+        </div>
+
+        <script>
+            class Bank {
+                constructor(balance)
+                {
+                    this.balance = balance
+                }
+
+                debit(amount)
+                {
+                    console.log(`you have withdrawn ${amount} remaining money is ${this.balance-amount}`);
+                    this.balance = this.balance-amount
+                }
+
+                withdraw(amount)
+                {
+                    this.balance - amount>0 ? this.debit(amount) : console.log('amount exceeded balance')
+                }
+
+                
+                deposit (amount)
+                {
+                    this.balance += amount
+                    console.log('balance after deposit is ', this.balance)
+                }
+            }
+
+            let can = new Bank(1000)
+            
+
+            const withdraw =()=>
+            {
+                let amt = parseInt(document.getElementById('with').value);
+                document.getElementById('with').value=''
+                can.withdraw(amt)
+                document.getElementById('bal').innerHTML=`balance is:${can.balance}`
+
+            }
+            const deposit =()=>
+            {
+                let amt = parseInt(document.getElementById('dep').value);
+                document.getElementById('dep').value=''
+                can.deposit(amt)
+
+                document.getElementById('bal').innerHTML=`balance is:${can.balance}`
+
+            }
+
+        </script>
+    </body>
+</html>

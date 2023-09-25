@@ -1,0 +1,43 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+
+        const selectRandItem = (arr)=>
+        {
+          const randNum = Math.floor(Math.random()*arr.length)
+          return arr[randNum]
+        }
+
+        const arr=['apple','banana','orange','mango','cherries']
+        console.log(selectRandItem(arr))
+        
+
+        // weather app rainy sunny overcast
+
+        const wdr =(weather)=>
+        {
+          let score;
+            if(weather=='rainy')
+            {
+              score =1
+            }
+            else if(weather=='sunny')
+            {
+              score=-1
+            }
+            else
+            {
+              score=0
+            }
+            return score
+
+        }
+
+        console.log(wdr('rainy'))
+    </script>
+  </body>
+</html>
+

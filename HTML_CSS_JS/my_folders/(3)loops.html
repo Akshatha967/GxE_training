@@ -1,0 +1,174 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            const arr=['moon','sun','earth','mars','saturn','mars','jupyter']
+
+            //for loops
+            for (let i=0;i<arr.length;i++)
+            {
+                console.log(arr[i])
+            }
+
+            for ( const thngs of arr)
+            {
+                console.log(thngs)
+            }
+
+            let sqr =[]
+            const num=[1,2,3,4]
+            for (const n of num){
+                sqr.push(n*n)
+                console.log(n*n);
+            }
+            console.log(sqr)
+
+
+            const sqrs =(num) =>
+            {
+                const res=[]
+                for(const  n of num){
+                    res.push(n*n)
+                }
+                return res;
+            }
+
+            console.log(sqrs([5,6,7])) 
+
+            // strings length - ''.length
+            const howmanyletter=(ltr)=>{
+                //const ltr='hello its a great weekend , what did you do today?'
+                let res=0;
+                // keep a note of in and of 
+                for(const lttr in ltr)
+                {
+                    res=Number(lttr)+1;
+                }
+
+                return {res}
+
+            }
+
+            //console.log(howmanyletter(prompt()))
+            console.log('hello'.length)
+
+            // sum of array elements
+            const sumarray = (arr)=>
+            {
+                let res =0;
+                for ( i of arr)
+                {
+                    res +=i;
+                }
+                return {res}
+            }
+            console.log(sumarray([20,30,40]))
+
+            //finding the max
+            const max = (number)=>
+            {
+                let max_num=number[0]
+                for (const i of number )
+                {
+                    if(i>max_num){
+                        max_num=i
+                    }
+                }
+                return {max_num }
+            }
+
+            console.log(max([20,30,40]))
+
+            // letter frequency
+            // we can also use in operator to check if a particular letter is in the object property.
+
+            const freq = (letter)=>
+            {
+                const obFreq ={
+
+                }
+                let countn =0;
+                for (const i in letter)
+                {
+                    if (obFreq.hasOwnProperty(letter[i]))
+                    {
+                        obFreq[letter[i]]++;
+                        // +=1 also works
+                    }
+                    else{
+                        obFreq[letter[i]]=1;
+                    }
+                }
+               
+                return obFreq;
+            }
+
+            console.log(freq('js is it gud or bad !!??'))
+
+            //
+
+            
+            const freq2 = (letter)=>
+            {
+                const obFreq ={
+
+                }
+                let countn =0;
+                for (const i of letter)
+                {
+                    if (obFreq.hasOwnProperty(i))
+                    {
+                        obFreq[i]++;
+                        // +=1 also works
+                    }
+                    else{
+                        obFreq[i]=1;
+                    }
+                }
+               
+                return obFreq;
+            }
+
+            console.log(freq2('js is it gud or bad !!??'))
+
+            // word frequency
+            const wFreq=(words)=>
+            {
+                const wordObj={
+
+                }
+                const arr= words.split(' ');
+
+                for(const w of arr)
+                {
+                    if (w in wordObj)
+                    {
+                        wordObj[w]+=1
+
+                    }
+                    else{
+                        wordObj[w]=1
+                    }
+                }
+                return wordObj;
+
+            }
+
+            console.log(wFreq('hello from akshatha hello akshatha from from'))
+
+            const wFreq2=(words)=>
+            {
+                const arr= words.split(' ');
+                return freq2(arr);
+
+            }
+
+            console.log(wFreq2('hello from akshatha hello akshatha from from'))
+       
+
+            // 
+        </script>
+    </body>
+</html>

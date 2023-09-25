@@ -1,0 +1,117 @@
+//promises -- asynchronous programming
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //console.log('check')
+           /* console.log('1.i have started to speak')
+            const getSoup = ()=>console.log('2. ordered soup ->s')
+            setTimeout(getSoup,2000)
+            console.log('3.im still started to speak')
+
+            //promises 
+            //promise takes in a function
+            // the function takes in resolve and rejcet  - 2 argumemnts
+            const promise1 = new Promise((resolve, reject)=>
+            {
+                setTimeout(()=>
+                {
+                    isReady= [false,true][Math.floor(Math.random()*2)]
+                    isReady ? resolve('soup is ready'):reject('not ready')
+                },2000)
+            })
+
+            //.then for success i.e for resolve
+            // .catch fr error i.e for reject
+            console.log(
+                promise1
+                .then(success=>console.log({success}))
+                .catch(error=>console.log({error}))
+
+                
+                )*/
+
+                //fetch
+               /* console.log('fetch',
+                fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response=>response.json()
+                .then(data => console.log(data)) //for the response() json puling out the data
+
+                
+                )
+                )*/
+
+                //ASYNX / AWAIT : lets avois the complicated fetch request
+                // must create a function for async
+                // must use the keyword asynch to use await
+                // use the word await
+
+                const getFun =async() =>
+                {
+                    const url ='https://dog.ceo/api/breeds/image/random'
+                    const response = await fetch(url) // .then .then can be avoided with await
+                    const data =  await response.json()
+                    console.log(data)
+                }
+                getFun()
+
+                const promise1 = new Promise((resolve, reject)=>
+                {
+                    setTimeout(()=>
+                    {
+                        isReady= [false,true][Math.floor(Math.random()*2)]
+                        isReady ? resolve('soup is ready'):reject('not ready')
+                    },2000)
+                })
+
+                const getSoup = async() =>
+                {
+                    
+                    const data ={
+                        pay:null,
+                        rating:null,
+                        tip:null,
+                        review:null
+                    }
+                    try{
+                        let tip=100
+                        let review = 'great'
+                    let res = await promise1
+                    console.log({res})
+                    data.pay=100
+                    data.rating=5
+                    data.tip = 10
+                    data.review= 2
+                    return data
+                    }
+                    catch(error)
+                    {
+                        let tip=0
+                        let review = 'bad'
+                        console.log({error})
+                        data.pay=0
+                    data.rating=1
+                    data.tip = 0
+                    data.review= 1
+                    return data
+                    }
+                }
+
+                getSoup().then(val => console.log(val))
+
+
+                //whenever our function is async it alwat=ys reurns as a promise.
+                
+                const sum =async(a,b)=>
+                {
+                    return a+b
+                }
+
+                console.log(sum(5,6).then(val=>console.log(val)),'sum')
+
+        </script>
+       
+    </body>
+</html>

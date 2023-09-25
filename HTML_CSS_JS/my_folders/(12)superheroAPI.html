@@ -1,0 +1,142 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <div>
+            <div>
+                <input type="text" id="nameH">
+                <button id="searchH">Search</button>
+            </div>
+
+            <div height =100 width = 100 id="getNHero" >
+                Get New Hero Randomly 
+            </div>
+
+            <div id="Acname">
+
+            </div>
+
+            <div id="name">
+
+            </div>
+            <div id="img">
+
+            </div>
+        </div>
+        <script>
+
+            
+            let btnSearch = document.getElementById('searchH')
+            
+            
+
+            let acToken = '10223569763528853'
+            let base_URL = `https://superheroapi.com/api.php/${acToken}`
+            let nameURL= `https://superheroapi.com/api.php/${acToken}/search`
+
+
+            // can replace both img and name in this itself 
+            const getStats =(jsonOb,dname)=>
+            {
+                //console.log( Object.keys(jsonOb.powerstats))
+                dname.innerHTML='';
+                Object.keys(jsonOb.powerstats).map(stats=>
+                {
+                   // console.log(jsonOb.powerstats[stats])
+                    dname.innerHTML+= `<p>${stats.toUpperCase()} : ${jsonOb.powerstats[stats]}</p>`
+                })
+                //return dname;
+            }
+            const getSearchedHero= (Sname)=>
+            {
+                console.log(`${base_URL}/search/${Sname}`)
+            fetch(`${base_URL}/search/${Sname}`)
+            .then(response=>response.json())
+            .then(json =>
+            {
+                
+                let dimg = document.getElementById('img')
+                let dname = document.querySelectorAll('#name') 
+                let acname = document.getElementById('Acname')
+
+                jsonr = json.results[0]
+
+                let jname = jsonr.name
+                
+                let iURL = jsonr.image.url
+                console.log(dname)
+
+                
+                getStats(jsonr,dname[0])
+                acname.innerHTML=`<p>${jname}</p>`
+                
+               // console.log('stats: ',stats)
+                //dname[0].innerHTML =`${jname}<p>Intelligence :${stats['intelligence']}</p><p>Combat : ${stats['combat']}</p>`
+
+
+                dimg.innerHTML=`<img src=${iURL} height =500 width =450>`
+                
+                
+
+
+            })
+            }
+            btnSearch.onclick=()=>
+            {   
+                let nameSr = document.getElementById('nameH')
+                let nameVal = nameSr.value;
+                console.log(nameVal)
+                getSearchedHero(nameVal)
+            }
+
+
+            var newHero = document.getElementById('getNHero')
+            newHero.style.border='1px solid black'
+            //newHero.style.cursor='pointer'
+            newHero.addEventListener('mouseenter',(e)=>
+            {
+
+                newHero.style.cursor='pointer'
+            });
+           // var rnum = Math.floor(Math.random()*250)
+            newHero.onclick=()=>{
+                
+                supHero(Math.floor(Math.random()*731))
+            }
+
+
+            const supHero=(id, name)=>
+            {
+                fetch(`${base_URL}/${id}`)
+                .then(response=>response.json())
+                //get the response as json
+                .then(json=>
+                {
+                    let dname = document.querySelectorAll('#name') 
+                    let dimg = document.getElementById('img')
+                    let acname = document.getElementById('Acname')
+                    //console.log(json)  
+
+                    let jname = json.name
+                    let stats = json.powerstats;
+                    <!-- console.log(json.powerstats.intelligence,json.id) -->
+                    let iURL = json.image.url
+
+                    acname.innerHTML=`<p>${jname}</p>`
+                    getStats(json,dname[0])
+                   // console.log(dname)
+                    //dname[0].innerHTML =`${jname}<p>Intelligence :${stats['intelligence']}</p><p>Combat : ${stats['combat']}</p>`
+
+                    // the bel was wrking for just img??? dimg also it wrks>>???
+                    dimg.innerHTML=`<img src=${iURL} height =500 width =450>`
+
+
+                }
+                )
+            }
+            //supHero(30)
+        </script>
+    </body>
+</html>

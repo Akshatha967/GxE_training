@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <div>
+            <div id ='dog_img'>
+
+            </div>
+            <button id ='get_new' onclick="fetch_dog()">Get a new Image</button>
+        </div>
+
+    </head>
+    <body>
+
+
+        <script>
+//. then - promises.
+// asynchronous programming - whenever there are  things that needs to be fetched, it takes someamount of time.
+// js instead of waiting, performs what it knows first.so it doesn't go line by line
+
+            function fetch_dog(){
+
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then(response=>response.json())
+            .then(json=>
+            {
+                console.log(json.message)
+                let dogImg = document.getElementById('dog_img');
+                dogImg.innerHTML=`<img src ='${json.message}' height =300 width=300>`
+            })
+        }
+
+        </script>
+    </body>
+</html>

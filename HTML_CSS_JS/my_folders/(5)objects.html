@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            const person ={
+                name:'akshatha',
+                age:22,
+                'fav movie':'HP'
+            }
+            //print
+            console.log(person.name)
+            console.log(person['fav movie'])
+            console.log(person['age'])
+
+            //assign property 
+            person.phone='9900765434'
+            person['fav hobbies']=['sing','dance','read','coin collection']
+            console.log(person)
+            const prop='eye color'
+            person[prop]='black'
+            console.log(person['fav hobbies'][0])
+
+            // object inside a function
+            const intro =(name, color)=>{
+
+                const per ={
+                    name :name,
+                    color: color,
+                    assets:100000,
+                    debts:103,
+
+                    age:function (){
+                        return this.assets-this.debts
+                    }
+                }
+                const introduction = `Hi my name is ${per.name} and my eye color is ${per.color} and my net worth is ${per.assets - per.debts} or ${per.age()}`
+                return introduction;
+            }
+
+            console.log(intro('dk','black'))
+
+
+        </script>
+    </body>
+</html>

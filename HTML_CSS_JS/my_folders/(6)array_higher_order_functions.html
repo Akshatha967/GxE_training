@@ -1,0 +1,72 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        // map filter reduce
+        <script>
+            // array functions : map , reduce, filter
+
+            // map
+            const doubleNums = (nums )=>{
+                return nums*nums
+            }
+            const arr = [2,4,6,8]
+            const arr2 = arr.map(doubleNums)
+            console.log(arr2)
+
+            const dblArr = (arr)=>
+            {
+                return arr.map(num => num*num)
+            }
+            console.log(dblArr([1,2,3,4]))
+
+
+            //filter [1,2,3,4,5], >3=>[4,5]
+            // can define a seperate function as an argument for filter method
+
+            const filtar = (arr, num)=>
+            {
+               return arr.filter(n=>n>num)
+            }
+
+            console.log(filtar([1,2,3,4,5],3))
+
+            // logical operators || , &&
+            // example : user is authenticated, a premium number then this -> use &&
+            // if not a paing number then -> do this 
+            // can provide different views of the system
+            const actors=[
+            {
+                name:'emma',
+                'net worth':10
+            },
+            {
+                name:'daniel',
+                'net worth':99
+            },
+            {
+                name:'ron',
+                'net worth':20
+            }
+            ]
+
+            console.log(actors.filter(ac=>ac['net worth']>10))
+
+            // use map an filer together -> get only  the names of above filtered person
+            const res =actors.filter(ac=>ac['net worth']>10)
+            console.log('res :',res)
+
+            const names = res.map(item => item.name).join(', ')
+            console.log('names : ',names)
+            
+
+            //reduce
+            // sum of all of the net worths 
+            // takes if funccton as argutmenet
+            // here next is each obj and prev is the value 0
+            console.log(actors.reduce((prev,next)=>prev+next['net worth'],0 ))
+            
+        </script>
+    </body>
+</html>

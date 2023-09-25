@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1 id="hello">Hello</h1>
+        </div>
+
+        <audio src="./sounds/quickhit.mp3" style="display: none;" type="audio/mpeg" id="punch"></audio>
+
+        </audio>
+
+        <audio src="./sounds/fastheal.mp3" style="display: none;" type="audio/mpeg" id="fastheal"></audio>
+
+        </audio>
+
+
+        <script>
+
+
+            /*let helo = document.getElementById('hello')
+            helo.onclick=()=>
+            {
+                console.log("hello")
+            }
+
+            helo.addEventListener('click',function()
+            {
+                console.log('hello')
+            })*/
+
+            document.addEventListener('keydown',function(e)
+            {
+                console.log(e.key)
+                //{e} and just e !!??
+                if(e.key =='Q')
+                {
+                    document.getElementById('punch').play()
+                }
+                else{
+                    document.getElementById('fastheal').play()
+                }
+            })
+
+
+        </script>
+    </body>
+</html>

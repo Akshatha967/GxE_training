@@ -1,0 +1,131 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            // classes and methods
+
+
+            class Car{
+                constructor(name, color,topSpeed)
+                {
+                    // properties
+                    this.name = name ,
+                    this.color = color,
+                    this.topSpeed = topSpeed,
+                    this.currentspeed = 0
+                }
+                zeroTosixty()
+                {
+                    setTimeout(()=>
+                    {
+                        console.log('that was fast')
+                        this.currentspeed=60
+                        console.log(this.currentspeed)
+                    },3000)
+                }
+
+                drive(speed=10)
+                {
+                    this.currentspeed +=speed
+                    //console.log('drove 2 miles at current speed : ', this.curentspeed,'miles/h')
+                    console.log(`driving at the speed of ${this.currentspeed} m/h`)
+                }
+
+                brake()
+                {
+                    this.currentspeed-=10
+                    console.log('brake is broken')
+                }
+
+                stop()
+                {
+                    this.currentspeed=0;
+                    console.log('halt----screeching halt!!')
+                }
+                getCurentSpeed()
+                {
+                    return this.currentspeed
+                }
+                
+            }
+
+            const ferrari = new Car ('ferrari','red',250)
+            console.log(ferrari.currentspeed)
+            ferrari.drive()
+            console.log(ferrari.currentspeed)
+            ferrari.drive()
+            console.log(ferrari.currentspeed)
+            //ferrari.zeroTosixty()
+            ferrari.brake()
+            console.log(ferrari.currentspeed)
+            ferrari.stop()
+            console.log(ferrari.currentspeed)
+
+            console.log('')
+            console.log('porsche------------------------')
+            const porsche  = new Car('Porsche','yellow',240)
+            porsche.currentspeed
+            porsche.drive()
+            porsche.drive()
+            console.log(porsche.currentspeed)
+            porsche.brake()
+            console.log(porsche.currentspeed)
+            porsche.stop()
+            console.log(porsche.currentspeed)
+
+            //shortcut
+            const nums = [1,2,3,4,5]
+            nums.forEach(val=> porsche.drive(val*10))
+            console.log(porsche.currentspeed)
+            porsche.zeroTosixty()
+            porsche.stop()
+            console.log(porsche.getCurentSpeed())
+
+            // arrya is a class with push etc methods.
+            const arr=[1,2,3,4]
+            arr.push(5) // method 
+            console.log(arr.join('**'))
+            console.log(arr)
+
+ //-----------------------------------------------------------------------------
+
+            // Array.prototype lets us write our own methods
+            // Hence these can be extended
+
+
+            // why did =()=> not work????
+            /*Array.prototype.myLen =()=>
+            {
+                return   this.length 
+            }*/
+
+            Array.prototype.mypush =function(item)
+            {
+                 this[this.length]=item
+                 return this
+            }
+
+            const fruits = ['apple','orange','banana']
+           console.log( fruits.mypush('mango'))
+           //fruits.push('berries')
+           console.log(fruits.mypush('berries'))
+
+
+           // Object
+           // .keys and .values returns the array
+           
+           const ob ={
+            name :'akshatha',
+            age :22
+
+           }
+
+           console.log(Object.keys(ob))
+           console.log(Object.values(ob))
+
+
+        </script>
+    </body>
+</html>
