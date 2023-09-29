@@ -28,8 +28,19 @@ public class Operators {
 		
 		// assignment operators : =
 		// relational operators : > < >= <= !=
+		//Ternary operators
 		
-
+		int num = 900;
+		String val = num%2==0? "even" : "odd";
+		System.out.println(val);
+		
+		//bitwise operators in java  : cN BE USED WITH ANY INTEGRAL TYPES
+		int bit1 = 10; // 1010
+		int bit2 =9; //1001
+		System.out.println(bit1 | bit2);
+		System.out.println(bit1&  bit2);
+		
+		
 	}
 
 }
