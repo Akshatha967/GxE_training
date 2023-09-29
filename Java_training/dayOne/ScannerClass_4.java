@@ -1,6 +1,7 @@
 package dayOne;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 
 class Readfrominp 
@@ -20,6 +21,17 @@ class Readfrominp
 	System.out.println(name+" "+age+" "+lastname+" "+chars);
 	
 	}
+	
+	public void dobConv(String dob)
+	{
+		StringTokenizer st = new StringTokenizer(dob);
+		
+		while(st.hasMoreTokens())
+		{
+			System.out.print(st.nextToken("/")+" ");
+		}
+		
+	}
 }
 public class ScannerClass_4{
 
@@ -36,6 +48,9 @@ public class ScannerClass_4{
 
 	Readfrominp inps = new Readfrominp();
 	inps.function();
+	inps.dobConv("29/09/2001");
+	
+	
 
 		
 
