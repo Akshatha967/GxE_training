@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+	<bean id="MessageSender" class="com.atl.msg.MessageSenders"  init-method="init" destroy-method="destroyObj">
+		<constructor-arg ref="smsChannel"></constructor-arg>
+		<!-- <property name="channel" ref="smsChannel"></property>-->
+	</bean>
+	
+	<bean id="smsChannel" class="com.atl.msg.SMSMessage">
+		
+	</bean>
+	
+	<bean id="emailChannel" class="com.atl.msg.EmailMessage">
+		
+	</bean>
+	
+	<bean id="parentCar" class="com.atl.msg.Car">
+		<property name="engineModel" value="Lithium"></property>
+		<property name="fuelType" value="Electric"></property>
+	
+	</bean>
+	
+	<bean id="BMW" class="com.atl.msg.Car" parent="parentCar">
+		<property name="model" value="BMW"></property>
+	</bean>
+
+</beans>
