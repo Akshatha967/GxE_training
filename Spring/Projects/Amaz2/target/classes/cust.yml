@@ -1,0 +1,16 @@
+#identation matters in the yaml file
+#we can convert properties file to yaml file
+
+
+
+person: 
+ id: 1
+ name: akshatha
+ address:
+  - id: 1
+    pin: 3242
+  - id: 2
+    pin: 34343
+    
+    
+    
